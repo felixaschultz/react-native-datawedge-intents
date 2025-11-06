@@ -48,6 +48,7 @@ import com.facebook.react.bridge.WritableNativeArray;
 import com.facebook.react.bridge.WritableNativeMap;
 import com.facebook.react.bridge.LifecycleEventListener;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
+import android.os.Build;
 
 public class RNDataWedgeIntentsModule extends ReactContextBaseJavaModule implements Observer, LifecycleEventListener {
 
@@ -105,7 +106,11 @@ public class RNDataWedgeIntentsModule extends ReactContextBaseJavaModule impleme
 
         IntentFilter filter = new IntentFilter();
         filter.addAction(ACTION_ENUMERATEDLISET);
-        reactContext.registerReceiver(myEnumerateScannersBroadcastReceiver, filter);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            reactContext.registerReceiver(myEnumerateScannersBroadcastReceiver, filter, Context.RECEIVER_EXPORTED);
+        } else {
+            reactContext.registerReceiver(myEnumerateScannersBroadcastReceiver, filter);
+        }
 	    if (this.registeredAction != null)
           registerReceiver(this.registeredAction, this.registeredCategory);
           
@@ -358,6 +363,11 @@ public class RNDataWedgeIntentsModule extends ReactContextBaseJavaModule impleme
         if (category != null && category.length() > 0)
           filter.addCategory(category);
         this.reactContext.registerReceiver(scannedDataBroadcastReceiver, filter);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            this.reactContext.registerReceiver(scannedDataBroadcastReceiver, filter, Context.RECEIVER_EXPORTED);
+        } else {
+            this.reactContext.registerReceiver(scannedDataBroadcastReceiver, filter);
+        }
     }
 
     @ReactMethod
@@ -389,7 +399,11 @@ public class RNDataWedgeIntentsModule extends ReactContextBaseJavaModule impleme
                 }
             }
         }
-        this.reactContext.registerReceiver(genericReceiver, filter);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            this.reactContext.registerReceiver(genericReceiver, filter, Context.RECEIVER_EXPORTED);
+        } else {
+            this.reactContext.registerReceiver(genericReceiver, filter);
+        }
     }
 
     private void unregisterReceivers() {
