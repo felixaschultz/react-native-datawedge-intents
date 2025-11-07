@@ -1,18 +1,18 @@
-# React-Native-DataWedge-Intents
+# rn-datawedge
 React Native Android module to interface with Zebra's DataWedge Intent API
 
-[![npm version](http://img.shields.io/npm/v/react-native-datawedge-intents.svg?style=flat-square)](https://npmjs.org/package/react-native-datawedge-intents "View this project on npm")
-[![npm downloads](http://img.shields.io/npm/dm/react-native-datawedge-intents.svg?style=flat-square)](https://npmjs.org/package/react-native-datawedge-intents "View this project on npm")
-[![npm downloads](http://img.shields.io/npm/dt/react-native-datawedge-intents.svg?style=flat-square)](https://npmjs.org/package/react-native-datawedge-intents "View this project on npm")
-[![npm licence](http://img.shields.io/npm/l/react-native-datawedge-intents.svg?style=flat-square)](https://npmjs.org/package/react-native-datawedge-intents "View this project on npm")
+[![npm version](http://img.shields.io/npm/v/rn-datawedge.svg?style=flat-square)](https://www.npmjs.com/package/rn-datawedge "View this project on npm")
+[![npm downloads](http://img.shields.io/npm/dm/rn-datawedge.svg?style=flat-square)](https://www.npmjs.com/package/rn-datawedge "View this project on npm")
+[![npm downloads](http://img.shields.io/npm/dt/rn-datawedge.svg?style=flat-square)](https://www.npmjs.com/package/rn-datawedge "View this project on npm")
+[![npm licence](http://img.shields.io/npm/l/rn-datawedge.svg?style=flat-square)](https://www.npmjs.com/package/rn-datawedge "View this project on npm")
 
 This module is useful when developing React Native applications for Zebra mobile computers, making use of the Barcode Scanner
 
 ### Installation
 
 ```bash
-npm install react-native-datawedge-intents --save
-react-native link react-native-datawedge-intents 
+npm install rn-datawedge --save
+react-native link rn-datawedge 
 ```
 Note: as of ReactNative version 0.27 automatic installation of modules is supported via react-native link ... If you are running a version earlier than 0.26 then you will be required to manually install the module.  More detail on manual installation of a typical module can be found [here](https://github.com/Microsoft/react-native-code-push#plugin-installation-android---manual).
 
@@ -23,7 +23,7 @@ There are two samples available for this module:
 **Please see [RNDataWedgeIntentDemo](https://github.com/darryncampbell/RNDataWedgeIntentDemo) for a basic sample application that makes use of this module**, file [index.android.js](https://github.com/darryncampbell/RNDataWedgeIntentDemo/blob/master/index.android.js).  This application is a little dated now and is designed to work with version 0.0.2 of this module.
 
 ```javascript
-import DataWedgeIntents from 'react-native-datawedge-intents'
+import DataWedgeIntents from 'rn-datawedge'
 ...
 //  Register a receiver for the barcode scans with the appropriate action
 DataWedgeIntents.registerReceiver('com.zebra.dwintents.ACTION', '');
@@ -42,7 +42,7 @@ DataWedgeIntents.sendIntent(DataWedgeIntents.ACTION_SOFTSCANTRIGGER,DataWedgeInt
 **Please see [DataWedgeReactNative](https://github.com/darryncampbell/DataWedgeReactNative) for a more fully featured and up to date application that makes use of this module**, file [App.js](https://github.com/darryncampbell/DataWedgeReactNative/blob/master/App.js).  This application requires a minimum version of 0.1.0 of this module.
 
 ```javascript
-import DataWedgeIntents from 'react-native-datawedge-intents'
+import DataWedgeIntents from 'rn-datawedge'
 ...
 //  Register a receiver for the barcode scans with the appropriate action
 DataWedgeIntents.registerBroadcastReceiver({

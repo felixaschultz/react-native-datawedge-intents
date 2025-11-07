@@ -1,5 +1,5 @@
 {
-  "name": "react-native-zebra-datawedge",
+  "name": "rn-datawedge",
   "version": "0.1.9",
   "description": "React Native Android module to interface with Zebra's DataWedge using Android Intents to control the barcode scanner and retrieve scanned data",
   "main": "index.js",
@@ -21,7 +21,7 @@
     "tc70",
     "data-capture"
   ],
-  "author": "Darryn Campbell",
+  "author": "Darryn Campbell & Felix A. Schultz",
   "license": "MIT",
   "repository": {
     "type": "git",
